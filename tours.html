@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.css"
+    integrity="sha512-+Zybl5OKqmaXx42ysgDdEODFRj8kLRQFy87G77NWmQxS8JMiQhDKovhffSaUuMDyaKxZOZrzouVbQMtBrUcv7w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- https://fonts.google.com/icons?icon.set=Material+Icons&selected=Material+Icons+Outlined:addchart:&icon.platform=web -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<!-- aos library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- aos library -->
+<link rel="stylesheet" href="assets/css/persian-datepicker.css">
+<link rel="stylesheet" href="assets/css/media.css">
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/font.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<style>
+    .main-img-tour{
+        width: 100%;
+        height: 500px;
+        background-image: url("assets/img/t23.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color: rgba(0, 0, 0, 0.479);
+        background-blend-mode: multiply;
+        position: relative;
+    }
+    .title-main-img-tour{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50% , -50%);
+        color: white;
+        font-size: 45px;
+        font-weight: 300;
+    }
+    .text-main-img-tour{
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        transform: translate(-50% , -50%);
+        color: rgba(255, 255, 255, 0.589);
+        font-weight: 200;
+        font-size: 25px;
+        text-align: center;
+    }
+    .city-tour-box{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .title-city-tour-box{
+        margin-left: 100px;
+        font-weight: 300;
+    }
+    .text-city-tour-box{
+        margin-left: 100px;
+        font-weight: 200;
+        color: rgba(0, 0, 0, 0.685);
+        font-size: 20px;
+    }
+    .box-img-city-tour{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .img-city-tour{
+        width: 20%;
+        margin-left: 50px;
+        height: 450px;
+        transition: 0.6s;
+        margin-top: 20px;
+        background-color: rgba(0, 0, 0, 0.425);
+        background-blend-mode: multiply;
+        overflow: hidden;
+    }
+    .img-city-tour:hover{
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .img-city-tour:hover .bg-img-city-tour{
+        top: 50%;
+        background-color: rgba(0, 0, 0, 0.589);
+    }
+    .img-city-tour:hover .text-bg-img-city-tour{
+        opacity: 1;
+        visibility: visible;
+    }
+    .img-city-tour:hover .link-bg-img-city-tour{
+        opacity: 1;
+        visibility: visible;
+    }
+    .bg-img-city-tour{
+        background-color: rgba(0, 0, 0, 0);
+        width: 100%;
+        height: 50%;
+        position: relative;
+        top: 70%;
+        transition: 0.6s;
+        cursor: pointer;
+    }
+    .title-bg-img-city-tour{
+        color: white;
+        text-align: center;
+        padding-top: 30px;
+        font-size: 30px;
+        font-weight: 300;
+    }
+    .text-bg-img-city-tour{
+        text-align: center;
+        color: rgba(221, 218, 218, 0.808);
+        font-weight: 200;
+        font-size: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.6s;
+    }
+    .link-bg-img-city-tour{
+        text-align: center;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.76);
+        background-color: rgb(212, 120, 87);
+        padding: 5px 15px;
+        transition: 0.6s;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: 200;
+        border-radius: 10px;
+        padding-bottom: 15px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .link-bg-img-city-tour:hover{
+        color: white;
+        background-color: rgb(170, 103, 79);
+    }
+    .icon-link-bg-img-city-tour{
+        position: relative;
+        top: 5px;
+    }
+    .img1-city-tour{
+        background-image: url("assets/img/t1.jpg");
+    }
+    .img2-city-tour{
+        background-image: url("assets/img/t2.jpg");
+    }
+    .img3-city-tour{
+        background-image: url("assets/img/t3.jpg");
+    }
+    .img4-city-tour{
+        background-image: url("assets/img/t4.jpg");
+    }
+    .img5-city-tour{
+        background-image: url("assets/img/t5.jpg");
+    }
+    .img6-city-tour{
+        background-image: url("assets/img/t6.jpg");
+    }
+    .img7-city-tour{
+        background-image: url("assets/img/t7.jpg");
+    }
+</style>
+</head>
+<body>
+    <div class="main-nav-bar-responsive">
+        <span class="material-symbols-outlined icon-main-nav-bar-responsive">sort</span>
+        <span class="material-icons icon-user icon-main-nav-bar-responsive">account_circle</span>
+    </div>
+    <div class="box-hamberger-menu-responsive">
+        <span class="material-symbols-outlined icon-close">close</span>
+        <span class="title-box-hamberger-menu-responsive">Bilury Hotel</span>
+        <br>
+        <hr class="hr-title-box-hamberger-menu-responsive">
+        <p class="title-home-box-hamberger-menu-responsive"><span>Home</span> <span
+                class="material-symbols-outlined icon-title-home-box-hamberger-menu-responsive">add</span><span
+                class="material-symbols-outlined icon-remove-title-home-box-hamberger-menu-responsive">remove</span></p>
+        <div class="subset-title-home-box-hamberger-menu-responsive">
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Home1</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Home2</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Home3</a>
+        </div>
+        <p class="title-home-box-hamberger-menu-responsive"><span>Rooms & Suites</span> <span
+                class="material-symbols-outlined icon-title-room-box-hamberger-menu-responsive">add</span><span
+                class="material-symbols-outlined icon-remove-title-room-box-hamberger-menu-responsive">remove</span></p>
+        <div class="subset-title-room-box-hamberger-menu-responsive">
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Room 1</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Room 2</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Room 3</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Single Room 1</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Single Room 2</a> <br>
+        </div>
+
+
+
+        <p class="title-home-box-hamberger-menu-responsive"><span>Tours</span> <span
+                class="material-symbols-outlined icon-title-tour-box-hamberger-menu-responsive">add</span><span
+                class="material-symbols-outlined icon-remove-title-tour-box-hamberger-menu-responsive">remove</span></p>
+        <div class="subset-title-tour-box-hamberger-menu-responsive">
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Tours categories</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Tour list</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Single tour</a> <br>
+        </div>
+        <p class="title-home-box-hamberger-menu-responsive">Gallery</p>
+
+
+        <p class="title-home-box-hamberger-menu-responsive"><span>pages</span> <span
+                class="material-symbols-outlined icon-title-page-box-hamberger-menu-responsive">add</span><span
+                class="material-symbols-outlined icon-remove-title-page-box-hamberger-menu-responsive">remove</span></p>
+        <div class="subset-title-page-box-hamberger-menu-responsive">
+            <h4 class="title-subset-page-responsive">Extra Services</h4>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Tour booking</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Meetings & events</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Restaurant & bar</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Spa & wellness</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Airport pickup</a> <br>
+            <h4 class="title-subset-page-responsive">My Account</h4>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Dashboard</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Booking</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Profile</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Register</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Login</a> <br>
+            <h4 class="title-subset-page-responsive">Other pages</h4>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">About</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">News</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Contact</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">Coming soon</a> <br>
+            <a class="link-subset-title-home-box-hamberger-menu-responsive" href="#">404</a> <br>
+        </div>
+        <span class="material-icons icon-list-responsiv">list</span>
+        <a class="menu-item-link-responsive" href="#"><img class="flag-usa-responsive"
+                src="assets/img/United_States_of_America_Large_Flag2.png" alt=""> EN</a>
+        <a class="menu-item-link-responsive" href="#">USD</a>
+        <a class="menu-item-link-responsive reserve-responsive" href="#"><span
+                class="material-icons icon-reserve-responsive">lunch_dining</span>Reservation</a>
+
+
+    </div>
+    <div class="box-color-hamberger-menu">
+
+    </div>
+    <div class="box-hamberger-menu">
+        <span class="material-symbols-outlined icon-close2">close</span>
+        <img class="logo-hamberger-menu" src="assets/img/logo-light.png" alt="">
+        <h4 class="title-hamberger-menu">Contact Info</h4>
+        <p class="text-hamberger-menu"><span
+                class="material-symbols-outlined icon-map-hamberger-menu">location_on</span> 610 Placer Loquen,
+            Paris, France</p>
+        <p class="text-hamberger-menu"><span
+                class="material-symbols-outlined icon-map-hamberger-menu">phone_in_talk</span> +33 (0) 1 89 78 67 56
+        </p>
+        <p class="text-hamberger-menu"><span class="material-symbols-outlined icon-map-hamberger-menu">mail</span>
+            Booking@example.com</p>
+        <h4 class="title2-hamberger-menu">Learn more</h4>
+        <a class="link-hamberger-menu" href="#">Bilury's Story</a> <br>
+        <a class="link-hamberger-menu" href="#">Terms of Use</a> <br>
+        <a class="link-hamberger-menu" href="#">Privacy Policy</a>
+        <h4 class="title3-hamberger-menu">Follow Us</h4>
+        <span class="mdi mdi-facebook icon-footer-hamberger-menu"></span>
+        <span class="mdi mdi-twitter icon-footer-hamberger-menu"></span>
+        <span class="mdi mdi-whatsapp icon-footer-hamberger-menu"></span>
+        <span class="mdi mdi-youtube icon-footer-hamberger-menu"></span>
+        <span class="mdi mdi-linkedin icon-footer-hamberger-menu"></span>
+    </div>
+    <div class="main-img-tour">
+        <h2 class="title-main-img-tour">France tours</h2>
+        <p class="text-main-img-tour">Est dictas legendos scribentur an. Vis ei tation iisque suscipit, vim id tota dolores hendrerit. Eu molestie reprehendunt mea molestiae cum</p>
+        <div class="main-nav-bar d-flex justify-content-between">
+            <div class="logo">
+                <img src="assets/img/logo-light.png" alt="">
+            </div>
+            <div class="menu-item d-flex">
+                <a id="home" class="menu-item-link" href="#">Home<span
+                        class="material-icons icon-down">expand_more</span></a>
+                <a id="room" class="menu-item-link" href="#">Rooms & Suites<span
+                        class="material-icons icon-down">expand_more</span></a>
+                <a id="tour" class="menu-item-link" href="#">Tours<span
+                        class="material-icons icon-down">expand_more</span></a>
+                <a class="menu-item-link" href="#">Gallery</a>
+                <a id="page" class="menu-item-link" href="#">Pages<span
+                        class="material-icons icon-down">expand_more</span></a>
+                <span class="menu-item-link"><span class="material-icons icon-list">list</span></span>
+                <a class="menu-item-link" href="#"><img class="flag-usa"
+                        src="assets/img/United_States_of_America_Large_Flag2.png" alt=""> EN</a>
+                <a class="menu-item-link" href="#">USD</a>
+                <a class="menu-item-link reserve" href="#"><span
+                        class="material-icons icon-reserve">lunch_dining</span>Reservation</a>
+                <a class="menu-item-link icon-user" href="#"><span
+                        class="material-icons icon-user">account_circle</span></a>
+            </div>
+        </div>
+        <div class="slide-down-home-box">
+            <a class="slide-down-home-box-link" href="project.html">Home 1</a>
+            <a class="slide-down-home-box-link" href="#">Home 2</a>
+            <a class="slide-down-home-box-link" href="#">Home 3</a>
+        </div>
+        <div class="slide-down-room-box">
+            <a class="slide-down-room-box-link" href="room1.html">Room 1</a>
+            <a class="slide-down-room-box-link" href="#">Room 2</a>
+            <a class="slide-down-room-box-link" href="#">Room 3</a>
+            <a class="slide-down-room-box-link" href="#">Single Room 1</a>
+            <a class="slide-down-room-box-link" href="#">Single Room 2</a>
+        </div>
+        <div class="slide-down-tour-box">
+            <a class="slide-down-tour-box-link" href="#">Tour categories</a>
+            <a class="slide-down-tour-box-link" href="#">Tour list</a>
+            <a class="slide-down-tour-box-link" href="#">Single tour</a>
+        </div>
+        <div class="slide-down-page-box d-flex">
+            <div class="extra">
+                <h5 class="slide-down-page-box-title">Extra services:</h5>
+                <a class="slide-down-page-box-link" href="#">Tour booking</a>
+                <a class="slide-down-page-box-link" href="#">Meetings & events</a>
+                <a class="slide-down-page-box-link" href="#">Restaurant & bar</a>
+                <a class="slide-down-page-box-link" href="#">Spa & wellness</a>
+                <a class="slide-down-page-box-link" href="#">Airport pickup</a>
+            </div>
+            <div class="account">
+                <h5 class="slide-down-page-box-title">My Account:</h5>
+                <a class="slide-down-page-box-link" href="#">Dashboard</a>
+                <a class="slide-down-page-box-link" href="#">Booking</a>
+                <a class="slide-down-page-box-link" href="#">Profile</a>
+                <a class="slide-down-page-box-link" href="#">Register</a>
+                <a class="slide-down-page-box-link" href="#">Login</a>
+            </div>
+            <div class="other">
+                <h5 class="slide-down-page-box-title">Other Pages:</h5>
+                <a class="slide-down-page-box-link" href="#">About</a>
+                <a class="slide-down-page-box-link" href="#">News</a>
+                <a class="slide-down-page-box-link" href="#">Contact</a>
+                <a class="slide-down-page-box-link" href="#">Coming Soon</a>
+                <a class="slide-down-page-box-link" href="#">404</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="city-tour-box">
+        <h3 class="title-city-tour-box">City tours in France</h3>
+        <p class="text-city-tour-box">Id vel nostrud maiorum, quo ad quidam perfecto. Mea justo dicta accusata no, te has aeque dolores repudiare, his etiam pericula id. Utinam quaestio philosophia eos in, eu eam offendit laboramus intellegebat, cu est quis officiis. Est dictas legendos scribentur an. Vis ei tation iisque suscipit, vim id tota dolores hendrerit. Eu molestie reprehendunt mea, ea legimus molestiae cum, partem iracundia delicatissimi cum te.</p>
+        <div class="box-img-city-tour">
+            <div class="img1-city-tour img-city-tour">
+                <div class="bg-img-city-tour">
+                    <h4 class="title-bg-img-city-tour">Paris</h4>
+                    <p class="text-bg-img-city-tour">17 tours packages</p>
+                    <a class="link-bg-img-city-tour" href="#">Explore Tours <span class="material-symbols-outlined icon-link-bg-img-city-tour">arrow_right_alt</span></a>
+                </div>
+            </div>
+            <div class="img2-city-tour img-city-tour">
+                <div class="bg-img-city-tour">
+                    <h4 class="title-bg-img-city-tour">Lyon</h4>
+                    <p class="text-bg-img-city-tour">21 tours packages</p>
+                    <a class="link-bg-img-city-tour" href="#">Explore Tours <span class="material-symbols-outlined icon-link-bg-img-city-tour">arrow_right_alt</span></a>
+                </div>
+            </div>
+            <div class="img3-city-tour img-city-tour">
+                <div class="bg-img-city-tour">
+                    <h4 class="title-bg-img-city-tour">Marseille</h4>
+                    <p class="text-bg-img-city-tour">24 tours packages</p>
+                    <a class="link-bg-img-city-tour" href="#">Explore Tours <span class="material-symbols-outlined icon-link-bg-img-city-tour">arrow_right_alt</span></a>
+                </div>
+            </div>
+            <div class="img4-city-tour img-city-tour">
+                <div class="bg-img-city-tour">
+                    <h4 class="title-bg-img-city-tour">Saint-Etienne</h4>
+                    <p class="text-bg-img-city-tour">16 tours packages</p>
+                    <a class="link-bg-img-city-tour" href="#">Explore Tours <span class="material-symbols-outlined icon-link-bg-img-city-tour">arrow_right_alt</span></a>
+                </div>
+            </div>
+            <div class="img5-city-tour img-city-tour">
+                <div class="bg-img-city-tour">
+                    <h4 class="title-bg-img-city-tour">Strasbourg</h4>
+                    <p class="text-bg-img-city-tour">26 tours packages</p>
+                    <a class="link-bg-img-city-tour" href="#">Explore Tours <span class="material-symbols-outlined icon-link-bg-img-city-tour">arrow_right_alt</span></a>
+                </div>
+            </div>
+            <div class="img6-city-tour img-city-tour">
+                <div class="bg-img-city-tour">
+                    <h4 class="title-bg-img-city-tour">Toulouse</h4>
+                    <p class="text-bg-img-city-tour">17 tours packages</p>
+                    <a class="link-bg-img-city-tour" href="#">Explore Tours <span class="material-symbols-outlined icon-link-bg-img-city-tour">arrow_right_alt</span></a>
+                </div>
+            </div>
+            <div class="img7-city-tour img-city-tour">
+                <div class="bg-img-city-tour">
+                    <h4 class="title-bg-img-city-tour">Nice</h4>
+                    <p class="text-bg-img-city-tour">17 tours packages</p>
+                    <a class="link-bg-img-city-tour" href="#">Explore Tours <span class="material-symbols-outlined icon-link-bg-img-city-tour">arrow_right_alt</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="d-flex justify-content-center">
+            <img class="img-footer" src="assets/img/l1.png" alt="">
+            <img class="img-footer" src="assets/img/l2.png" alt="">
+            <img class="img-footer" src="assets/img/l3.png" alt="">
+            <img class="img-footer" src="assets/img/l4.png" alt="">
+            <img class="img-footer" src="assets/img/l5.png" alt="">
+            <img class="img-footer" src="assets/img/l6.png" alt="">
+        </div>
+        <hr>
+        <div class="box-link-footer d-flex">
+            <div class="footer-logo">
+                <img class="img-footer-logo" src="assets/img/logo-light.png" alt="">
+                <p class="text-footer-logo">Sed diam constituam ei, qui erat probo dissentiet ex. Id vim libris
+                    volutpat, pri cu errem timeam cotidieque, purto summo has te. An quis eligendi atomorum duo,
+                    latine veritus vituperata vim no. Duo errem latine scribentur an. <a
+                        class="link-plus-footer-logo" href="#">[+]</a></p>
+            </div>
+            <div class="contact-info">
+                <h4 class="title-contact-info">Contact Info</h4>
+                <p class="text-contact-info"> 610 Placer Loquen, Paris, France. <br> +33 321-654-9876 (Ext: 123).
+                </p>
+                <a class="link-contact-info" href="#">Booking@example.com</a>
+                <br>
+                <a class="link-contact-info" href="#">www.example.com</a>
+            </div>
+            <div class="quick-links">
+                <h4 class="title-quick-links">Quick Links</h4>
+                <div class="d-flex">
+                    <div class="link-quick-links-box1">
+                        <a class="link-quick-links" href="#">Bilury's Story</a> <br>
+                        <a class="link-quick-links" href="#">Team</a> <br>
+                        <a class="link-quick-links" href="#">News</a> <br>
+                        <a class="link-quick-links" href="#">Contact Us</a> <br>
+                        <a class="link-quick-links" href="#">My Account</a> <br>
+                    </div>
+                    <div>
+                        <a class="link-quick-links" href="#">Rooms & Suites</a> <br>
+                        <a class="link-quick-links" href="#">Spa & Wellness</a> <br>
+                        <a class="link-quick-links" href="#">Restaurant</a> <br>
+                        <a class="link-quick-links" href="#">Booking tours</a> <br>
+                        <a class="link-quick-links" href="#">Airpost pickup</a> <br>
+                    </div>
+                </div>
+
+            </div>
+            <div class="app-footer">
+                <h4 class="title-app-footer">Get the app</h4>
+                <div class="d-flex">
+                    <img class="img-app-footer" src="assets/img/i1.svg" alt="">
+                    <img class="img-app-footer" src="assets/img/i2.svg" alt="">
+                </div>
+                <h4 class="title-app-footer">Connect social</h4>
+                <i class="icon-link-app-footer mdi mdi-facebook"></i>
+                <i class="icon-link-app-footer mdi mdi-twitter"></i>
+                <i class="icon-link-app-footer mdi mdi-youtube"></i>
+                <i class="icon-link-app-footer mdi mdi-whatsapp"></i>
+                <i class="icon-link-app-footer mdi mdi-linkedin"></i>
+            </div>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between">
+            <p class="text-footnote"> © 2023 Bilury Hotel. All rights reserved.</p>
+            <div class="box-link-footnote">
+                <a class="link-footnote" href="#">Privacy Policy</a>
+                <a class="link-footnote" href="#">Terms of Use</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- type write -->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <!-- type write -->
+    <!-- Tippy.js -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <!-- Tippy.js -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <!-- jquery -->
+    <!-- aos library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- aos library -->
+    <script src="assets/js/persian-date.js"></script>
+    <script src="assets/js/persian-datepicker-0.4.5.js"></script>
+    <script>
+var homeSlidshow = document.querySelector(".slide-down-home-box")
+var home = document.querySelector("#home")
+var styHome = window.getComputedStyle(home)
+var widthHome = styHome.getPropertyValue("width")
+var responsSliderHome = (150 - parseFloat(widthHome)) / 2
+homeSlidshow.style.left = home.getClientRects()[0].left - responsSliderHome + "px"
+homeSlidshow.style.top = home.getClientRects()[0].bottom + "px"
+window.addEventListener("resize", function () {
+    homeSlidshow.style.left = home.getClientRects()[0].left - responsSliderHome + "px"
+})
+$("#home").mouseenter(function (e) {
+    $(".slide-down-home-box").css("height", "120px")
+})
+$("#home").mouseleave(function (e) {
+    $(".slide-down-home-box").css("height", "0px")
+})
+$(".slide-down-home-box").mouseenter(function (e) {
+    $(".slide-down-home-box").css("height", "120px")
+})
+$(".slide-down-home-box").mouseleave(function (e) {
+    $(".slide-down-home-box").css("height", "0px")
+})
+var roomSlidshow = document.querySelector(".slide-down-room-box")
+var room = document.querySelector("#room")
+var styRoom = window.getComputedStyle(room)
+var widthRoom = styRoom.getPropertyValue("width")
+var responsSliderRoom = (150 - parseFloat(widthRoom)) / 2
+roomSlidshow.style.left = room.getClientRects()[0].left - responsSliderRoom + "px"
+roomSlidshow.style.top = room.getClientRects()[0].bottom + "px"
+window.addEventListener("resize", function () {
+    roomSlidshow.style.left = room.getClientRects()[0].left - responsSliderRoom + "px"
+})
+$("#room").mouseenter(function (e) {
+    $(".slide-down-room-box").css("height", "190px")
+})
+$("#room").mouseleave(function (e) {
+    $(".slide-down-room-box").css("height", "0px")
+})
+$(".slide-down-room-box").mouseenter(function (e) {
+    $(".slide-down-room-box").css("height", "190px")
+})
+$(".slide-down-room-box").mouseleave(function (e) {
+    $(".slide-down-room-box").css("height", "0px")
+})
+var tourSlidshow = document.querySelector(".slide-down-tour-box")
+var tour = document.querySelector("#tour")
+var styTour = window.getComputedStyle(tour)
+var widthTour = styTour.getPropertyValue("width")
+var responsSliderTour = (150 - parseFloat(widthTour)) / 2
+tourSlidshow.style.left = tour.getClientRects()[0].left - responsSliderTour + "px"
+tourSlidshow.style.top = tour.getClientRects()[0].bottom + "px"
+window.addEventListener("resize", function () {
+    tourSlidshow.style.left = tour.getClientRects()[0].left - responsSliderTour + "px"
+})
+$("#tour").mouseenter(function (e) {
+    $(".slide-down-tour-box").css("height", "120px")
+})
+$("#tour").mouseleave(function (e) {
+    $(".slide-down-tour-box").css("height", "0px")
+})
+$(".slide-down-tour-box").mouseenter(function (e) {
+    $(".slide-down-tour-box").css("height", "120px")
+})
+$(".slide-down-tour-box").mouseleave(function (e) {
+    $(".slide-down-tour-box").css("height", "0px")
+})
+
+var pageSlidshow = document.querySelector(".slide-down-page-box")
+var page = document.querySelector("#page")
+var styPage = window.getComputedStyle(page)
+var widthPage = styPage.getPropertyValue("width")
+var responsSliderPage = (500 - parseFloat(widthPage))
+pageSlidshow.style.left = page.getClientRects()[0].left - responsSliderPage + "px"
+pageSlidshow.style.top = page.getClientRects()[0].bottom + "px"
+window.addEventListener("resize", function () {
+    pageSlidshow.style.left = page.getClientRects()[0].left - responsSliderPage + "px"
+})
+$("#page").mouseenter(function (e) {
+    $(".slide-down-page-box").css("height", "300px")
+})
+$("#page").mouseleave(function (e) {
+    $(".slide-down-page-box").css("height", "0px")
+})
+$(".slide-down-page-box").mouseenter(function (e) {
+    $(".slide-down-page-box").css("height", "300px")
+})
+$(".slide-down-page-box").mouseleave(function (e) {
+    $(".slide-down-page-box").css("height", "0px")
+})
+var navBar = document.querySelector(".main-nav-bar")
+window.addEventListener("scroll", function () {
+    if (scrollY > 50) {
+        navBar.style.backgroundColor = "rgb(43, 42, 42)"
+    }
+    if (scrollY < 50) {
+        navBar.style.backgroundColor = "rgba(0, 0, 0, 0)"
+    }
+})
+
+
+var iconList = document.querySelector(".icon-list")
+var bHamMenu = document.querySelector(".box-hamberger-menu")
+var bCHamMenu = document.querySelector(".box-color-hamberger-menu")
+var iconListRes = document.querySelector(".icon-main-nav-bar-responsive")
+var iconListRespons = document.querySelector(".icon-list-responsiv")
+var bHamMenuRes = document.querySelector(".box-hamberger-menu-responsive")
+var iconClose = document.querySelector(".icon-close")
+var iconClose2 = document.querySelector(".icon-close2")
+iconList.addEventListener("click", function () {
+    bHamMenu.style.transform = "translateX(-100%)"
+    bCHamMenu.style.opacity = "1"
+    bCHamMenu.style.visibility = "visible"
+    document.body.style.overflowY = "hidden"
+})
+bCHamMenu.addEventListener("click", function () {
+    bCHamMenu.style.opacity = "0"
+    bCHamMenu.style.visibility = "hidden"
+    bHamMenu.style.transform = "translateX(0)"
+    bHamMenuRes.style.transform = "translateX(0)"
+    document.body.style.overflowY = "visible"
+})
+iconClose.addEventListener("click", function () {
+    bCHamMenu.style.opacity = "0"
+    bCHamMenu.style.visibility = "hidden"
+    bHamMenu.style.transform = "translateX(0)"
+    bHamMenuRes.style.transform = "translateX(0)"
+    document.body.style.overflowY = "visible"
+})
+iconClose2.addEventListener("click", function () {
+    bCHamMenu.style.opacity = "0"
+    bCHamMenu.style.visibility = "hidden"
+    bHamMenu.style.transform = "translateX(0)"
+    bHamMenuRes.style.transform = "translateX(0)"
+    document.body.style.overflowY = "visible"
+})
+
+
+iconListRes.addEventListener("click", function () {
+    bHamMenuRes.style.transform = "translateX(-100%)"
+    bCHamMenu.style.opacity = "1"
+    bCHamMenu.style.visibility = "visible"
+    document.body.style.overflowY = "hidden"
+})
+iconListRespons.addEventListener("click", function () {
+    bHamMenuRes.style.transform = "translateX(0%)"
+    bCHamMenu.style.opacity = "1"
+    bCHamMenu.style.visibility = "visible"
+    bHamMenu.style.transform = "translateX(-100%)"
+    document.body.style.overflowY = "hidden"
+})
+
+var iconPlusHome = document.querySelector(".icon-title-home-box-hamberger-menu-responsive")
+var iconPlusRoom = document.querySelector(".icon-title-room-box-hamberger-menu-responsive")
+var iconPlusTour = document.querySelector(".icon-title-tour-box-hamberger-menu-responsive")
+var iconPlusPage = document.querySelector(".icon-title-page-box-hamberger-menu-responsive")
+var iconMinHome = document.querySelector(".icon-remove-title-home-box-hamberger-menu-responsive")
+var iconMinRoom = document.querySelector(".icon-remove-title-room-box-hamberger-menu-responsive")
+var iconMinTour = document.querySelector(".icon-remove-title-tour-box-hamberger-menu-responsive")
+var iconMinPage = document.querySelector(".icon-remove-title-page-box-hamberger-menu-responsive")
+var subPlusHome = document.querySelector(".subset-title-home-box-hamberger-menu-responsive")
+var subPlusRoom = document.querySelector(".subset-title-room-box-hamberger-menu-responsive")
+var subPlusTour = document.querySelector(".subset-title-tour-box-hamberger-menu-responsive")
+var subPlusPage = document.querySelector(".subset-title-page-box-hamberger-menu-responsive")
+iconPlusHome.addEventListener("click", function () {
+    subPlusHome.style.height = "100px"
+    iconPlusHome.style.display = "none"
+    iconMinHome.style.display = "inline"
+})
+iconMinHome.addEventListener("click", function () {
+    subPlusHome.style.height = "0px"
+    iconPlusHome.style.display = "inline"
+    iconMinHome.style.display = "none"
+})
+iconPlusRoom.addEventListener("click", function () {
+    subPlusRoom.style.height = "150px"
+    iconPlusRoom.style.display = "none"
+    iconMinRoom.style.display = "inline"
+})
+iconMinRoom.addEventListener("click", function () {
+    subPlusRoom.style.height = "0px"
+    iconPlusRoom.style.display = "inline"
+    iconMinRoom.style.display = "none"
+})
+
+
+iconPlusTour.addEventListener("click", function () {
+    subPlusTour.style.height = "100px"
+    iconPlusTour.style.display = "none"
+    iconMinTour.style.display = "inline"
+})
+iconMinTour.addEventListener("click", function () {
+    subPlusTour.style.height = "0px"
+    iconPlusTour.style.display = "inline"
+    iconMinTour.style.display = "none"
+})
+
+
+iconPlusPage.addEventListener("click", function () {
+    subPlusPage.style.height = "600px"
+    iconPlusPage.style.display = "none"
+    iconMinPage.style.display = "inline"
+})
+iconMinPage.addEventListener("click", function () {
+    subPlusPage.style.height = "0px"
+    iconPlusPage.style.display = "inline"
+    iconMinPage.style.display = "none"
+})
+
+
+
+
+    </script>
+</body>
+</html>
